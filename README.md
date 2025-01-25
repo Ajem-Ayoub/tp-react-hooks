@@ -88,8 +88,21 @@ _Votre réponse pour l'exercice 2 :_
 
 ```
 Expliquez votre solution ici
+Pour implémenter la gestion des préférences de langue dans l'application, j'ai utilisé un contexte (`LanguageContext`) afin de partager la langue sélectionnée à travers l'application.
+
+1. **Création du `LanguageContext` :**
+   J'ai créé un `LanguageContext` qui permet de partager la langue actuelle et la fonction pour la changer dans toute l'application. Le `LanguageContext.Provider` est ajouté autour des composants principaux pour qu'ils puissent y accéder.
+
+2. **Ajout du sélecteur de langue :**
+   J'ai ajouté un composant `LangueSelector` qui permet à l'utilisateur de choisir la langue entre "FR" (français) et "EN" (anglais). Lorsque l'utilisateur sélectionne une langue, l'état du contexte est mis à jour et la langue sélectionnée est transmise aux autres composants.
+
+3. **Adaptation des composants :**
+   J'ai adapté les composants `ProductSearch` et `ProductList` pour afficher les textes en fonction de la langue choisie. Par exemple, dans `ProductSearch`, le placeholder de la barre de recherche change en fonction de la langue. De même, dans `ProductList`, le prix du produit est affiché avec le symbole correct (€ ou $) en fonction de la langue.
+
 [Ajoutez vos captures d'écran]
 ```
+
+![alt text](captures/catalogueEN.png)
 
 ### Exercice 3 : Hooks Personnalisés
 
