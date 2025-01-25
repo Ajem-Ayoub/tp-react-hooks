@@ -1,11 +1,18 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { ThemeContext } from '../App';
 
-const ProductSearch = () => {
+const ProductSearch = ({setSearchProduct}) => {
   const [searchTerm, setSearchTerm] = useState('');
   const { isDarkTheme } = useContext(ThemeContext);
+  useEffect(()=>{
+    const handler = setTimeout(() => {
+    setSearchProduct(searchTerm);
+    }, 500);
+    return () => {
+      clearTimeout(handler);
+    };
+  },[searchTerm])
   // TODO: Exercice 2.1 - Utiliser le LanguageContext
-  
   // TODO: Exercice 1.2 - Utiliser le hook useDebounce
   
   return (
