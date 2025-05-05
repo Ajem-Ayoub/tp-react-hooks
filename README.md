@@ -113,11 +113,20 @@ Pour implémenter la gestion des préférences de langue dans l'application, j'a
 - [ ] 3.3 Documenter votre solution ici
 
 _Votre réponse pour l'exercice 3 :_
+Pour créer des hooks réutilisables, j’ai implémenté deux hooks personnalisés : `useDebounce` et `useLocalStorage`.
+
+- [x] `useDebounce` :
+      Ce hook permet de ralentir les appels fréquents, par exemple lors de la saisie utilisateur. J’ai utilisé `useEffect` et `setTimeout` pour déclencher une mise à jour du `debouncedValue` seulement après un délai donné (par défaut 500ms). Cela permet d’optimiser les performances et éviter les appels réseau inutiles.
+
+- [x] `useLocalStorage` :
+      Ce hook permet de synchroniser un état React avec le localStorage. Lors de l'initialisation, il tente de récupérer la valeur stockée à partir du localStorage. Ensuite, à chaque mise à jour de l’état, la nouvelle valeur est automatiquement persistée.
 
 ```
 Expliquez votre solution ici
 [Ajoutez vos captures d'écran]
 ```
+
+![alt text](captures/localStorage.png)
 
 ### Exercice 4 : Gestion Asynchrone et Pagination
 
