@@ -60,7 +60,6 @@ Pour chaque exercice :
 _Votre réponse pour l'exercice 1 :_
 
 ```
-Expliquez votre solution ici
 
 - [x] 1.1 Modifier le composant ProductSearch pour utiliser la recherche :
   J'ai ajouté un état `searchTerm` pour stocker la valeur de la recherche et utilisé `setSearchProduct` pour transmettre la valeur au parent.
@@ -71,7 +70,6 @@ Expliquez votre solution ici
 - [x] 1.3 Documenter votre solution ici :
   J'ai modifié `ProductSearch` pour gérer le debounce et ajouté un état global `searchProduct` dans `App` pour partager la recherche avec `ProductList`. Ensuite, `ProductList` filtre les produits en fonction de `searchProduct`.
 
-[Ajoutez vos captures d'écran]
 ```
 
 ![alt text](captures/productSearch.png)
@@ -87,7 +85,7 @@ Expliquez votre solution ici
 _Votre réponse pour l'exercice 2 :_
 
 ```
-Expliquez votre solution ici
+
 Pour implémenter la gestion des préférences de langue dans l'application, j'ai utilisé un contexte (`LanguageContext`) afin de partager la langue sélectionnée à travers l'application.
 
 1. **Création du `LanguageContext` :**
@@ -99,7 +97,6 @@ Pour implémenter la gestion des préférences de langue dans l'application, j'a
 3. **Adaptation des composants :**
    J'ai adapté les composants `ProductSearch` et `ProductList` pour afficher les textes en fonction de la langue choisie. Par exemple, dans `ProductSearch`, le placeholder de la barre de recherche change en fonction de la langue. De même, dans `ProductList`, le prix du produit est affiché avec le symbole correct (€ ou $) en fonction de la langue.
 
-[Ajoutez vos captures d'écran]
 ```
 
 ![alt text](captures/catalogueEN.png)
@@ -113,6 +110,9 @@ Pour implémenter la gestion des préférences de langue dans l'application, j'a
 - [ ] 3.3 Documenter votre solution ici
 
 _Votre réponse pour l'exercice 3 :_
+
+```
+
 Pour créer des hooks réutilisables, j’ai implémenté deux hooks personnalisés : `useDebounce` et `useLocalStorage`.
 
 - [x] `useDebounce` :
@@ -121,9 +121,6 @@ Pour créer des hooks réutilisables, j’ai implémenté deux hooks personnalis
 - [x] `useLocalStorage` :
       Ce hook permet de synchroniser un état React avec le localStorage. Lors de l'initialisation, il tente de récupérer la valeur stockée à partir du localStorage. Ensuite, à chaque mise à jour de l’état, la nouvelle valeur est automatiquement persistée.
 
-```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
 ```
 
 ![alt text](captures/localStorage.png)
@@ -139,9 +136,17 @@ Expliquez votre solution ici
 _Votre réponse pour l'exercice 4 :_
 
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+Pour gérer le chargement et la pagination, j’ai apporté les modifications suivantes dans l’application.
+
+- [x] 4.1 Ajouter le bouton de rechargement :
+      J’ai ajouté un bouton de rechargement dans le composant `ProductList` pour permettre à l’utilisateur de recharger la liste des produits. Ce bouton réinitialise l'état de chargement, puis refait une requête API pour récupérer les produits.
+
+- [x] 4.2 Implémenter la pagination
+      J’ai ajouté un mécanisme de pagination dans le composant ProductList pour afficher un nombre limité de produits par page et permettre à l’utilisateur de naviguer entre les pages. J’ai utilisé un état currentPage pour suivre la page courante, et j’ai mis à jour l’URL de l’API pour inclure les paramètres de pagination (par exemple, skip et limit).
+
 ```
+
+![alt text](captures/pagination.png)
 
 ## Rendu
 

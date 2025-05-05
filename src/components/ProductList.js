@@ -12,7 +12,11 @@ const ProductList = ({ searchProduct }) => {
     loading,
     error,
     // TODO: Exercice 4.1 - Récupérer la fonction de rechargement
+    reloadProducts,
     // TODO: Exercice 4.2 - Récupérer les fonctions et états de pagination
+    currentPage,
+    totalPages,
+    changePage,
   } = useProductSearch();
 
   if (loading)
@@ -34,6 +38,9 @@ const ProductList = ({ searchProduct }) => {
   return (
     <div>
       {/* TODO: Exercice 4.1 - Ajouter le bouton de rechargement */}
+      <button className="btn btn-primary mb-3" onClick={reloadProducts}>
+        Recharger les produits
+      </button>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {products.map(
           (product) =>
@@ -70,27 +77,23 @@ const ProductList = ({ searchProduct }) => {
       </div>
 
       {/* TODO: Exercice 4.2 - Ajouter les contrôles de pagination */}
-      {/* Exemple de structure pour la pagination :
-      <nav className="mt-4">
-        <ul className="pagination justify-content-center">
-          <li className="page-item">
-            <button className="page-link" onClick={previousPage}>
-              Précédent
-            </button>
-          </li>
-          <li className="page-item">
-            <span className="page-link">
-              Page {currentPage} sur {totalPages}
-            </span>
-          </li>
-          <li className="page-item">
-            <button className="page-link" onClick={nextPage}>
-              Suivant
-            </button>
-          </li>
-        </ul>
+      <nav className="pagination-nav">
+        <button
+          onClick={() => changePage(currentPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Précédent
+        </button>
+        <span>
+          Page {currentPage} sur {totalPages}
+        </span>
+        <button
+          onClick={() => changePage(currentPage + 1)}
+          disabled={currentPage === totalPages}
+        >
+          Suivant
+        </button>
       </nav>
-      */}
     </div>
   );
 };
